@@ -3,7 +3,6 @@ package com.example.employes.controller;
 import java.util.List;
 import java.util.Set;
 
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,17 +19,18 @@ import com.example.employes.service.EmployeService;
 @RestController
 @RequestMapping("/employes")
 public class EmployeController {
-	
+
 	private EmployeService employeService;
-	
+
 	public EmployeController(EmployeService employeService) {
 		this.employeService = employeService;
 	}
-	
-	@PostMapping("/deleteDuplicate/{criteria}") 
-	public ResponseEntity<Set<Employe>> deleteDuplicateEmployes(@RequestBody List<Employe> listEmployes, @PathVariable String criteria) {
+
+	@PostMapping("/deleteDuplicate/{criteria}")
+	public ResponseEntity<Set<Employe>> deleteDuplicateEmployes(@RequestBody List<Employe> listEmployes,
+			@PathVariable String criteria) {
 		Criteria.criteria = criteria;
 		return ResponseEntity.ok().body(this.employeService.deleteDuplicateEmployes(listEmployes));
 	}
-	
+
 }

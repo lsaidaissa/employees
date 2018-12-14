@@ -10,12 +10,11 @@ import com.example.employes.model.Employe;
 import com.example.employes.service.EmployeService;
 
 @Service
-public class EmployeServiceImpl implements EmployeService{
+public class EmployeServiceImpl implements EmployeService {
 
 	@Override
 	public Set<Employe> deleteDuplicateEmployes(List<Employe> listEmployes) {
 		return listEmployes.stream().distinct().collect(Collectors.toSet());
 	}
-
 
 }
