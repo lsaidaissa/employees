@@ -6,5 +6,5 @@ import java.util.Set;
 import com.example.employes.model.Employe;
 
 public interface EmployeService {
-	Set<Employe> deleteDuplicateEmployes(List<Employe> listEmployes);
+	Set<Employe> deleteDuplicateEmployes(List<Employe> listEmployes, String criteria) throws NoSuchFieldException, SecurityException;
 }

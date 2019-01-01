@@ -52,6 +52,21 @@ public class Employe {
 		this.salaire = salaire;
 	}
 
+	/*
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		Employe employe = (Employe) obj;
+		if (this == employe) {
+			return true;
+		} else {
+				return ((this.id == employe.id) && (this.nom.equals(employe.nom)) 
+						&& (this.prenom.equals(employe.prenom)) && (this.salaire == employe.salaire));
+		}
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == null) {
@@ -86,5 +101,6 @@ public class Employe {
 			hashno = 13 * hashno + (salaire == 0 ? 0 : new Double(salaire).hashCode());
 		return hashno;
 	}
+	*/
 
 }

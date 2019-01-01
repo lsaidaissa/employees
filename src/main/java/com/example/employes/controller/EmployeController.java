@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.employes.model.Criteria;
 import com.example.employes.model.Employe;
 import com.example.employes.service.EmployeService;
 
@@ -28,9 +27,8 @@ public class EmployeController {
 
 	@PostMapping("/deleteDuplicate/{criteria}")
 	public ResponseEntity<Set<Employe>> deleteDuplicateEmployes(@RequestBody List<Employe> listEmployes,
-			@PathVariable String criteria) {
-		Criteria.criteria = criteria;
-		return ResponseEntity.ok().body(this.employeService.deleteDuplicateEmployes(listEmployes));
+			@PathVariable String criteria) throws NoSuchFieldException, SecurityException{
+		return ResponseEntity.ok().body(this.employeService.deleteDuplicateEmployes(listEmployes, criteria));
 	}
 
 }
